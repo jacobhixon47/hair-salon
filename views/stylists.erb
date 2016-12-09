@@ -10,22 +10,22 @@
 <% end %>
 
 <h3>Add a Stylist:</h3>
-<form action="/stylists" method="post">
-  <input type="text" name="name" placeholder="Name"><br>
+<form action="/stylists" method="post" class="form-with-border">
+  <input type="text" name="name" placeholder="Name" required><br>
   <button type="submit" class="btn btn-success">Add Stylist</button>
 </form><br>
 
 <h3>Add a client to any stylist:</h3>
-<form action="/clients" method="post">
-  <label for="stylist_id">Stylist:</label>
-  <select id="stylist_id" name="stylist_id" type="text">
+<form action="/clients" method="post" class="form-with-border">
+  <select id="stylist_id" name="stylist_id" type="text" required>
+    <option value="" disabled selected>Select a Stylist</option>
     <% @stylists.each() do |stylist| %>
       <option value="<%= stylist.id()%>"><%= stylist.name() %></option>
     <% end %>
   </select><br>
 
-  <input id="first_name" name="first_name" type="text" placeholder="First Name"><br>
-  <input id="last_name" name="last_name" type="text" placeholder="Last Name"><br>
+  <input id="first_name" name="first_name" type="text" placeholder="First Name" required><br>
+  <input id="last_name" name="last_name" type="text" placeholder="Last Name" required><br>
 
   <button type="submit" class="btn btn-success">Add Client</button>
 </form><br>

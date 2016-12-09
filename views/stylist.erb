@@ -14,10 +14,10 @@
 <% end %>
 
 <h3>Add a Client:</h3>
-<form action="/clients" method="post">
+<form action="/clients" method="post" class="form-with-border">
   <input id="stylist_id" type="hidden" name="stylist_id" value="<%= @stylist.id() %>">
-  <input id="first_name" name="first_name" type="text" placeholder="First Name"><br>
-  <input id="last_name" name="last_name" type="text" placeholder="Last Name"><br>
+  <input id="first_name" name="first_name" type="text" placeholder="First Name" required><br>
+  <input id="last_name" name="last_name" type="text" placeholder="Last Name" required><br>
 
   <button type="submit" class="btn btn-success">Add Client</button>
 

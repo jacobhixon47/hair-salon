@@ -1,6 +1,6 @@
 <h1><%= @client.first_name() %> <%= @client.last_name %></h1>
 
-<h3>Stylist: <%= @my_stylist.name() %></h3>
+<h3><em>Stylist: <a href="/stylists/<%= @my_stylist.id() %>"><button class="btn btn-default"><%= @my_stylist.name() %></button></a></h3><br>
 
 <a href="/clients/<%= @client.id() %>/edit"><button class="btn btn-warning">Edit</button></a>
 
@@ -8,3 +8,4 @@
   <input type="hidden" name="_method" value="delete">
   <button type="submit" class="btn btn-danger">Delete <%= @client.first_name() %></button>
 </form>
+<a href="/"><button class="btn btn-info">Home</button></a>

@@ -49,6 +49,10 @@ end
 
 # end of stylists routing
 
+get('/clients') do
+  @clients = Client.all()
+  erb(:clients)
+end
 
 post('/clients') do
   first_name = params.fetch('first_name')

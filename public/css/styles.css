@@ -1,0 +1,50 @@
+body {
+  font-family: monospace;
+  background: url('../img/background.jpg');
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.row {
+  text-align: center;
+}
+
+h1, h2, h3, p {
+  color: #fff;
+}
+
+.column {
+  background-color: rgba(50, 50, 50, 0.7);
+  padding: 2%;
+}
+
+ul {
+  list-style: none;
+  padding-left: 0px;
+}
+
+.btn {
+  width: 100%;
+}
+
+.btn-info, .btn-success, .btn-warning, .btn-danger {
+  padding: 3%;
+}
+
+input {
+  width: 100%;
+  padding: 2%;
+}
+
+.form-with-border {
+  border: 15px #ddd solid;
+  border-radius: 10px;
+}
+
+select {
+  width: 100%;
+}
+.btn-default {
+  background-color: #eee;
+}
