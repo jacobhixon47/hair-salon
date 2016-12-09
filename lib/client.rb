@@ -20,4 +20,8 @@ class Client
     end
     clients
   end
+
+  define_method(:save) do
+    DB.exec("INSERT INTO clients (first_name, last_name) VALUES ('#{@first_name}', '#{@last_name}');")
+  end
 end
