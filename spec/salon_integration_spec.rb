@@ -60,3 +60,21 @@ describe('delete a stylist', {:type => :feature}) do
     expect(page).to have_content('no stylists yet!')
   end
 end
+
+describe('update clients', {:type => :feature}) do
+  it('allows the user to update the name of a client') do
+    visit('/stylists')
+    fill_in('name', :with => 'Trena')
+    click_button('Add Stylist')
+    click_link('Trena')
+    fill_in('first_name', :with => 'John')
+    fill_in('last_name', :with => 'Smith')
+    click_button('Add Client')
+    click_link("Smith, John")
+    click_link('Edit')
+    fill_in('new_first_name', :with => 'Jane')
+    fill_in('new_last_name', :with => 'Williams')
+    click_button('Update')
+    expect(page).to have_content('Jane')
+  end
+end

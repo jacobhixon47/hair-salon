@@ -1,0 +1,10 @@
+<h1><%= @client.first_name() %> <%= @client.last_name %></h1>
+
+<h3>Stylist: <%= @my_stylist.name() %></h3>
+
+<a href="/clients/<%= @client.id() %>/edit"><button class="btn btn-warning">Edit</button></a>
+
+<form action="/clients/<%= @client.id() %>" method="post">
+  <input type="hidden" name="_method" value="delete">
+  <button type="submit" class="btn btn-danger">Delete <%= @client.first_name() %></button>
+</form>

@@ -1,0 +1,10 @@
+<h1>Update <%= @client.first_name() %>'s Info</h1>
+
+<form action="/clients/<%= @client.id() %>" method="post">
+  <input type="hidden" name="_method" value="patch">
+
+  <input type="text" name="new_first_name" placeholder="New First Name">
+  <input type="text" name="new_last_name" placeholder="New Last Name">
+
+  <button type="submit" class="btn btn-success">Update</button>
+</form>
