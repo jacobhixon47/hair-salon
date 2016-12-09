@@ -9,6 +9,27 @@ describe(Client) do
     end
   end
 
+  describe('#first_name') do
+      it('displays the first name of the client')do
+      client = Client.new({first_name: 'John', last_name: 'Smith', stylist_id: 1})
+      expect(client.first_name()).to(eq('John'))
+    end
+  end
+
+  describe('#last_name') do
+      it('displays the last name of the client') do
+      client = Client.new({first_name: 'John', last_name: 'Smith', stylist_id: 1})
+      expect(client.last_name()).to(eq('Smith'))
+    end
+  end
+
+  describe('#stylist_id') do
+    it('displays the stylist id of the client') do
+      client = Client.new({first_name: 'John', last_name: 'Smith', stylist_id: 1})
+      expect(client.stylist_id()).to(eq(1))
+    end
+  end
+
   describe('.all') do
     it('is empty at first') do
       expect(Client.all()).to(eq([]))
