@@ -78,3 +78,18 @@ describe('update clients', {:type => :feature}) do
     expect(page).to have_content('Jane')
   end
 end
+
+describe('delete a client', {:type => :feature}) do
+  it('allows the user to delete a client from the database') do
+    visit('/stylists')
+    fill_in('name', :with => 'Trena')
+    click_button('Add Stylist')
+    click_link('Trena')
+    fill_in('first_name', :with => 'John')
+    fill_in('last_name', :with => 'Smith')
+    click_button('Add Client')
+    click_link("Smith, John")
+    click_button('Delete John')
+    expect(page).to have_content('any clients yet!')
+  end
+end

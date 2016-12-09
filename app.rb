@@ -83,7 +83,6 @@ end
 delete('/clients/:id') do
   @client = Client.find(params.fetch('id').to_i())
   @stylist = Stylist.find(@client.stylist_id())
-  binding.pry
   @client.delete()
   @clients = Client.all()
   erb(:stylist)
