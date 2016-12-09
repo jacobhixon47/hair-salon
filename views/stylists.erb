@@ -1,0 +1,8 @@
+<ul>
+  <h1><em>All Stylists:</em></h1>
+  <% @stylists.each() do |stylist| %>
+    <li><a href="/stylists/<%= stylist.id() %>"><button type="button" class="btn btn-default"><%= stylist.name() %></button></a></li>
+  <% end %>
+</ul>
+
+<a href="/"><button type="button" class="btn btn-info">Home</button></a>
