@@ -5,7 +5,7 @@
 
   <ul>
     <% @stylist.clients().each() do |client| %>
-      <li><%= client.first_name() %></li>
+      <li><%= client.last_name() %>, <%= client.first_name() %></li>
     <% end %>
   </ul>
 
@@ -13,6 +13,21 @@
     <p><%= @stylist.name() %> does not have any clients yet!</p>
   <% end %>
 
+
+<h3>Add a client to <%= @stylist.name %></h3>
+<form action="/clients" method="post">
+  <input id="stylist_id" name="stylist_id" type="hidden" value="<%= @stylist.id() %>">
+
+  <input id="first_name" name="first_name" type="text">
+  <input id="last_name" name="last_name" type="text">
+
+  <button type="submit" class="btn btn-success">Add Client</button>
+
+</form>
+
+
+
 <div class="container">
   <a href="/"><button class="btn">Home</button></a>
+  <a href="/stylists/new"><button class="btn">New Stylist</button></a>
 </div>
