@@ -27,3 +27,12 @@ describe('add clients to a stylist', {:type => :feature}) do
     expect(page).to have_content("John")
   end
 end
+
+describe('add stylists', {:type => :feature}) do
+  it('allows the user to add a stylist to list of stylists') do
+    visit('/')
+    fill_in('name', :with => 'Trena')
+    click_button('Add Stylist')
+    expect(page).to have_content('Trena')
+  end
+end

@@ -18,7 +18,7 @@ end
 
 post('/stylists') do
   name = params.fetch('name')
-  Stylist.new({:name => name}).save()
+  Stylist.new({:name => name, :id => nil}).save()
   @stylists = Stylist.all()
   erb(:stylists)
 end
