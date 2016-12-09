@@ -36,3 +36,16 @@ describe('add stylists', {:type => :feature}) do
     expect(page).to have_content('Trena')
   end
 end
+
+describe('update stylists', {:type => :feature}) do
+  it('allows the user to update the name of a stylist') do
+    visit('/stylists')
+    fill_in('name', :with => 'Trena')
+    click_button('Add Stylist')
+    click_link('Trena')
+    click_link('Edit Trena')
+    fill_in('new_name', :with => 'Tracy')
+    click_button('Update')
+    expect(page).to have_content('Tracy')
+  end
+end
