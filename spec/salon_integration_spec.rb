@@ -30,7 +30,7 @@ end
 
 describe('add stylists', {:type => :feature}) do
   it('allows the user to add a stylist to list of stylists') do
-    visit('/')
+    visit('/stylists')
     fill_in('name', :with => 'Trena')
     click_button('Add Stylist')
     expect(page).to have_content('Trena')
