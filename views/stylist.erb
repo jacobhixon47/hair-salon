@@ -13,7 +13,7 @@
   <p><%= @stylist.name() %> does not have any clients yet!</p>
 <% end %>
 
-<h3>Add a client for <%= @stylist.name() %>:</h3>
+<h3>Add a Client:</h3>
 <form action="/clients" method="post">
   <input id="stylist_id" type="hidden" name="stylist_id" value="<%= @stylist.id() %>">
   <input id="first_name" name="first_name" type="text" placeholder="First Name"><br>
@@ -21,8 +21,13 @@
 
   <button type="submit" class="btn btn-success">Add Client</button>
 
-</form>
+</form><br><br>
 
-<a href="/stylists/<%= @stylist.id() %>/edit"><button class="btn btn-warning">Edit <%= @stylist.name() %></button></a><br>
+<a href="/stylists/<%= @stylist.id() %>/edit"><button class="btn btn-warning">Edit <%= @stylist.name() %></button></a>
+<form action="/stylists/<%= @stylist.id() %>" method="post">
+  <input type="hidden" name="_method" value="delete">
+  <button type="submit" class="btn btn-danger">Delete <%= @stylist.name() %></button>
+</form><br><br>
+
 <a href="/"><button class="btn btn-info">Home</button></a><br>
 <a href="/stylists"><button class="btn btn-info">New Stylist</button></a><br>

@@ -49,3 +49,14 @@ describe('update stylists', {:type => :feature}) do
     expect(page).to have_content('Tracy')
   end
 end
+
+describe('delete a stylist', {:type => :feature}) do
+  it('allows the user to delete a stylist') do
+    visit('/stylists')
+    fill_in('name', :with => 'Trena')
+    click_button('Add Stylist')
+    click_link('Trena')
+    click_button('Delete Trena')
+    expect(page).to have_content('no stylists yet!')
+  end
+end
